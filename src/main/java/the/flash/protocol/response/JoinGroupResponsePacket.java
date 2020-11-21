@@ -7,7 +7,7 @@ import static the.flash.protocol.command.Command.JOIN_GROUP_RESPONSE;
 
 @Data
 public class JoinGroupResponsePacket extends Packet {
-    private String groupId;
+    private String groupName;
 
     private boolean success;
 

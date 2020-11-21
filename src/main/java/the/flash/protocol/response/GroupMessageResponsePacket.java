@@ -9,7 +9,7 @@ import static the.flash.protocol.command.Command.GROUP_MESSAGE_RESPONSE;
 @Data
 public class GroupMessageResponsePacket extends Packet {
 
-    private String fromGroupId;
+    private String fromGroupName;
 
     private Session fromUser;
 

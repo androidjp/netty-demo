@@ -12,7 +12,7 @@ public class SessionUtil {
     private static final Map<String, Channel> userIdChannelMap = new ConcurrentHashMap<>();
     private static final Map<String, Channel> userNameChannelMap = new ConcurrentHashMap<>();
 
-    private static final Map<String, ChannelGroup> groupIdChannelGroupMap = new ConcurrentHashMap<>();
+    private static final Map<String, ChannelGroup> groupNameChannelGroupMap = new ConcurrentHashMap<>();
 
     public static void bindSession(Session session, Channel channel) {
         userIdChannelMap.put(session.getUserId(), channel);
@@ -49,11 +49,11 @@ public class SessionUtil {
         return userNameChannelMap.get(userName);
     }
 
-    public static void bindChannelGroup(String groupId, ChannelGroup channelGroup) {
-        groupIdChannelGroupMap.put(groupId, channelGroup);
+    public static void bindChannelGroup(String groupName, ChannelGroup channelGroup) {
+        groupNameChannelGroupMap.put(groupName, channelGroup);
     }
 
-    public static ChannelGroup getChannelGroup(String groupId) {
-        return groupIdChannelGroupMap.get(groupId);
+    public static ChannelGroup getChannelGroup(String groupName) {
+        return groupNameChannelGroupMap.get(groupName);
     }
 }

@@ -8,11 +8,12 @@ import java.util.Scanner;
 public class SendToGroupConsoleCommand implements ConsoleCommand {
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        System.out.print("发送消息给某个某个群组：");
+        System.out.print("群组名：");
 
-        String toGroupId = scanner.nextLine();
+        String toGroupName = scanner.nextLine();
+        System.out.print("发送消息：");
         String message = scanner.nextLine();
-        channel.writeAndFlush(new GroupMessageRequestPacket(toGroupId, message));
+        channel.writeAndFlush(new GroupMessageRequestPacket(toGroupName, message));
 
     }
 }

@@ -10,10 +10,10 @@ public class QuitGroupConsoleCommand implements ConsoleCommand {
     public void exec(Scanner scanner, Channel channel) {
         QuitGroupRequestPacket quitGroupRequestPacket = new QuitGroupRequestPacket();
 
-        System.out.print("输入 groupId，退出群聊：");
-        String groupId = scanner.nextLine();
+        System.out.print("输入 群聊名，退出群聊：");
+        String groupName = scanner.nextLine();
 
-        quitGroupRequestPacket.setGroupId(groupId);
+        quitGroupRequestPacket.setGroupName(groupName);
         channel.writeAndFlush(quitGroupRequestPacket);
     }
 }

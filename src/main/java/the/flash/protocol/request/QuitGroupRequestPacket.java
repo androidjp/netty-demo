@@ -8,7 +8,7 @@ import static the.flash.protocol.command.Command.QUIT_GROUP_REQUEST;
 @Data
 public class QuitGroupRequestPacket extends Packet {
 
-    private String groupId;
+    private String groupName;
 
     @Override
     public Byte getCommand() {

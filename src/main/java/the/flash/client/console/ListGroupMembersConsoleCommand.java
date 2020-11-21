@@ -14,7 +14,7 @@ public class ListGroupMembersConsoleCommand implements ConsoleCommand {
         System.out.print("输入 groupId，获取群成员列表：");
         String groupId = scanner.nextLine();
 
-        listGroupMembersRequestPacket.setGroupId(groupId);
+        listGroupMembersRequestPacket.setGroupName(groupId);
         channel.writeAndFlush(listGroupMembersRequestPacket);
     }
 }

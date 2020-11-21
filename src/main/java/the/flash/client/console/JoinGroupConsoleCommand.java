@@ -10,10 +10,10 @@ public class JoinGroupConsoleCommand implements ConsoleCommand {
     public void exec(Scanner scanner, Channel channel) {
         JoinGroupRequestPacket joinGroupRequestPacket = new JoinGroupRequestPacket();
 
-        System.out.print("输入 groupId，加入群聊：");
-        String groupId = scanner.nextLine();
+        System.out.print("输入 群聊名，加入群聊：");
+        String groupName = scanner.nextLine();
 
-        joinGroupRequestPacket.setGroupId(groupId);
+        joinGroupRequestPacket.setGroupName(groupName);
         channel.writeAndFlush(joinGroupRequestPacket);
     }
 }

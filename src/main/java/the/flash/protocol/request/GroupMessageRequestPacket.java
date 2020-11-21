@@ -9,11 +9,11 @@ import static the.flash.protocol.command.Command.GROUP_MESSAGE_REQUEST;
 @Data
 @NoArgsConstructor
 public class GroupMessageRequestPacket extends Packet {
-    private String toGroupId;
+    private String toGroupName;
     private String message;
 
-    public GroupMessageRequestPacket(String toGroupId, String message) {
-        this.toGroupId = toGroupId;
+    public GroupMessageRequestPacket(String toGroupName, String message) {
+        this.toGroupName = toGroupName;
         this.message = message;
     }
 

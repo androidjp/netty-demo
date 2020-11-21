@@ -8,7 +8,7 @@ import static the.flash.protocol.command.Command.LIST_GROUP_MEMBERS_REQUEST;
 @Data
 public class ListGroupMembersRequestPacket extends Packet {
 
-    private String groupId;
+    private String groupName;
 
     @Override
     public Byte getCommand() {

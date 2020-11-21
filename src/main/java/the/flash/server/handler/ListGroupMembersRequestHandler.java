@@ -24,8 +24,8 @@ public class ListGroupMembersRequestHandler extends SimpleChannelInboundHandler<
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, ListGroupMembersRequestPacket requestPacket) {
         // 1. 获取群的 ChannelGroup
-        String groupId = requestPacket.getGroupId();
-        ChannelGroup channelGroup = SessionUtil.getChannelGroup(groupId);
+        String groupName = requestPacket.getGroupName();
+        ChannelGroup channelGroup = SessionUtil.getChannelGroup(groupName);
 
         // 2. 遍历群成员的 channel，对应的 session，构造群成员的信息
         List<Session> sessionList = new ArrayList<>();
@@ -37,7 +37,7 @@ public class ListGroupMembersRequestHandler extends SimpleChannelInboundHandler<
         // 3. 构建获取成员列表响应写回到客户端
         ListGroupMembersResponsePacket responsePacket = new ListGroupMembersResponsePacket();
 
-        responsePacket.setGroupId(groupId);
+        responsePacket.setGroupId(groupName);
         responsePacket.setSessionList(sessionList);
         ctx.writeAndFlush(responsePacket);
     }
